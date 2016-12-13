@@ -103,7 +103,6 @@ Based on the feedbacks, the following changes were made (titanic_v1.js),
 	// assigning colors: female-pink, male-light blue**
 ```
       chart.assignColor("female", "#FA8573", .75);
-
       chart.assignColor("male", "#7EC8FC", .75); 
 
       svg4.append("text")
@@ -147,6 +146,7 @@ y2.titleShape.text("Number of Passengers in Group (shown as circles)");
 ```
 
 **Final charts**
+
 1. Titanic Passenger Survival Rate by Age Group
 2. Titanic Passenger Survival Rate by Age Group and Gender
 
@@ -161,7 +161,7 @@ Based on the final charts (ignoring the age group "No Data" that the group with 
 
 Chart 1: Titanic Passenger Survival Rate by Age Group
 
-1. the overall survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60) except for the 
+1. The overall survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60) except for the 
 2. The youngest age_group (0-10) had the highest survival rate of nearly 0.6.
 3. The age groups above 61 actually showed a significant drop in survival rate. However, there were only 22 passengers with age above 60. It is hard to make such conclusion with low number of passenger counts.
 
@@ -176,6 +176,7 @@ Chart 2: Titanic Passenger Survival Rate by Age Group and Gender
 File description: (ref: [https://www.kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data) )
 
 VARIABLE DESCRIPTIONS:
+
 survival        Survival			(0 = No; 1 = Yes)
 pclass          Passenger Class	(1 = 1st; 2 = 2nd; 3 = 3rd)
 name            Name
@@ -189,6 +190,7 @@ cabin           Cabin
 embarked        Port of Embarkation (C=Cherbourg; Q=Queenstown; S=Southampton)
 
 SPECIAL NOTES:
+
 Pclass is a proxy for socio-economic status (SES)
  1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower
 
@@ -198,12 +200,12 @@ Age is in Years; Fractional if Age less than One (1)
 With respect to the family relation variables (i.e. sibsp and parch)
 some relations were ignored.  The following are the definitions used
 for sibsp and parch.
-
+```
 Sibling:  Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic
 Spouse:   Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)
 Parent:   Mother or Father of Passenger Aboard Titanic
 Child:    Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
-
+```
 Other family relatives excluded from this study include cousins, nephews/nieces, aunts/uncles, and in-laws.  Some children travelled only with a nanny, therefore parch=0 for them.  As well, some
 travelled with very close friends or neighbors in a village, however, the definitions do not support such relations.
 
@@ -218,134 +220,75 @@ The data used in this project consists of 891 observations of passengers aboard 
 Original Titanic Data file titanic_data.csv was loaded into a Oracle database table.
 
 A query was run and a comma delimited data file was generated.
-
+```
 select age_group, sex, 
-
         passengers,
-
         survived, 
-
         round(survived/passengers,3) survival_rate,
-
         age_group_passengers,
-
         age_group_survived,
-
         round(age_group_survived/age_group_passengers,3) age_group_survival_rate
-
   from (
-
 select age_group, sex, survived, passengers,
-
        sum(passengers) over (partition by age_group) age_group_passengers,
-
        sum(survived) over (partition by age_group) age_group_survived
-
   from (
-
     select age_group,
-
            sex,
-
            count(*) passengers,
-
            sum(case when survived=1 then 1 else 0 end) survived
-
       from (
-
         select 
-
                 case when age is null then 'No Data'
-
                     when age <= 10 then '0-10'
-
                     when age <= 20 then '11-20'
-
                     when age <= 30 then '21-30'
-
                     when age <= 40 then '31-40'
-
                     when age <= 50 then '41-50'
-
                     when age <= 60 then '51-60'
-
                     when age <= 70 then '61-70'
-
                     when age > 70 then '70+'
-
                     else 'UNKNOWN' 
-
                 end age_group,
-
                 d.*
-
           from X_TITANIC_DATA d
-
           )
-
          group by age_group, sex
-
          )
-
      )
-
  order by age_group, sex ;
+```
 
 ##### Titanic_survival_rate.csv:
-
+```
 select age_group, passengers,
-
        round((male_survived+female_survived)/passengers,3) survival_rate,
-
        round(male_survived/passengers,3)     male_rate,
-
        round(female_survived/passengers,3)   female_rate
-
   from (
-
 select age_group, 
-
        count(*) passengers,
-
        sum(case when survived=1 and sex='male' then 1 else 0 end) male_survived,        
-
        sum(case when survived=1 and sex='female' then 1 else 0 end) female_survived        
-
   from (
-
     select 
-
             case when age is null then 'No Data'
-
                 when age <= 10 then '0-10'
-
                 when age <= 20 then '11-20'
-
                 when age <= 30 then '21-30'
-
                 when age <= 40 then '31-40'
-
                 when age <= 50 then '41-50'
-
                 when age <= 60 then '51-60'
-
                 when age <= 70 then '61-70'
-
                 when age > 70 then '70+'
-
                 else 'UNKNOWN' 
-
             end age_group,
-
             d.*
-
       from X_TITANIC_DATA d
-
       )
-
      group by age_group
-
   );
+```
 
 #### References
 
