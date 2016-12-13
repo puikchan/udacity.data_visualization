@@ -8,6 +8,7 @@
 
 It is general understanding that in the Titanic accident, the female passengers, children and elderly were receiving priority to get on board of the lifeboats and thus should have a better survival chances. The charts in this project is try to put data into visual display of these understandings.
 
+#### Design
 This data visualization provides two charts to present the survival rates of the passengers on different age groups and gender of Titanic incident. 
 
  1. **Titanic Passenger Survival Rate by Age Group**
