@@ -12,21 +12,20 @@ This data visualization provides two charts to present the survival rates of the
 
 1. **Titanic Passenger Survival Rate by Age Group**
 ```
-  x-axis: age groups 
+    x-axis: age groups 
 	left y-axis: survival rate of age group (irrespective of gender)
 	right y-axis: passenger counts in age group (irrespective of gender)
 ```
 2. **Titanic Passenger Survival Rate by Age Group and Gender**
 ```
-  x-axis: age groups and gender
+    x-axis: age groups and gender
 	left y-axis: survival rate of age group
 	right y-axis: passenger counts in age group
 ```
 In both chart, the survival rate data points are represented by the bars, and the passenger counts data points are represented by the circles, respectively.
 
 For the purpose of data visualization in this project, only the following fields from the original dataset were used,
-```    
-    PassengerId
+```    PassengerId
     Survived
     Sex
     Age
@@ -38,8 +37,7 @@ Udacity Data Visualization "Data Set Options" - [Titanic Data](https://docs.goog
 This data set contains demographics and passenger information from a subset (891) of the 2224 passengers and crew on board the Titanic. More information about the data set[ can be found here](https://www.kaggle.com/c/titanic-gettingStarted). The data set is included in the project submission in folder ./data, and the description is provided in appendix A.
 
 For the purpose of data visualization in this project, only the following fields were used,
-```
-    PassengerId
+```    PassengerId
     Survived
     Sex
     Age
@@ -56,8 +54,7 @@ titanic_survival_rate.csv:
 	age_group, passengers, survival_rate, male_rate, female_rate
 
 titanic_survival_by_age_gender.csv:
-```
-    age_group
+```    age_group
     sex
     passengers
     survived
@@ -96,27 +93,27 @@ Based on the feedbacks, the following changes were made (titanic_v1.js),
          .attr("y", chart._yPixels() - 20)
          .style("text-anchor", "middle")
          .style("font-weight", "bold")
-         .text("Survival Rate by Age Group");**
+         .text("Survival Rate by Age Group");
 
-**        x.titleShape.text("Age Group");**
-**        y.titleShape.text("Survival Rate");**
+**        x.titleShape.text("Age Group"); **
+**        y.titleShape.text("Survival Rate"); **
 
 **Chart 2:**
 
 	// assigning colors: female-pink, male-light blue**
 
-**      chart.assignColor("female", "#FA8573", .75);**
+**      chart.assignColor("female", "#FA8573", .75); **
 
-**chart.assignColor("male", "#7EC8FC", .75);**
+**chart.assignColor("male", "#7EC8FC", .75); **
 
       svg4.append("text")
          .attr("x", chart._xPixels() + chart._widthPixels() / 2)
          .attr("y", chart._yPixels() - 20)
          .style("text-anchor", "middle")
          .style("font-weight", "bold")
-**         .text("Survival Rate by Age Group and Gender");**
+**         .text("Survival Rate by Age Group and Gender"); **
 
-**    	chart.addLegend(width-120, 60, 100, 90, "left");**
+**    	chart.addLegend(width-120, 60, 100, 90, "left"); **
         x.titleShape.text("Age Group / Gender");
         y.titleShape.text("Survival Rate");
 
