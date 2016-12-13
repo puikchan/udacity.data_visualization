@@ -11,26 +11,26 @@ It is general understanding that in the Titanic accident, the female passengers,
 This data visualization provides two charts to present the survival rates of the passengers on different age groups and gender of Titanic incident. 
 
 1. **Titanic Passenger Survival Rate by Age Group**
-
+```
   x-axis: age groups 
 	left y-axis: survival rate of age group (irrespective of gender)
 	right y-axis: passenger counts in age group (irrespective of gender)
-
+```
 2. **Titanic Passenger Survival Rate by Age Group and Gender**
-
+```
   x-axis: age groups and gender
 	left y-axis: survival rate of age group
 	right y-axis: passenger counts in age group
-
+```
 In both chart, the survival rate data points are represented by the bars, and the passenger counts data points are represented by the circles, respectively.
 
 For the purpose of data visualization in this project, only the following fields from the original dataset were used,
-'''    
+```    
     PassengerId
     Survived
     Sex
     Age
-'''
+```
 #### Data Source
 
 Udacity Data Visualization "Data Set Options" - [Titanic Data](https://docs.google.com/document/d/1w7KhqotVi5eoKE3I_AZHbsxdr-NmcWsLTIiZrpxWx4w/pub?embedded=true)
@@ -38,12 +38,12 @@ Udacity Data Visualization "Data Set Options" - [Titanic Data](https://docs.goog
 This data set contains demographics and passenger information from a subset (891) of the 2224 passengers and crew on board the Titanic. More information about the data set[ can be found here](https://www.kaggle.com/c/titanic-gettingStarted). The data set is included in the project submission in folder ./data, and the description is provided in appendix A.
 
 For the purpose of data visualization in this project, only the following fields were used,
-'''
+```
     PassengerId
     Survived
     Sex
     Age
-'''
+```
 
 Further details of the data extraction will be discussed in the data file preparation section.
 
@@ -56,7 +56,7 @@ titanic_survival_rate.csv:
 	age_group, passengers, survival_rate, male_rate, female_rate
 
 titanic_survival_by_age_gender.csv:
-'''
+```
     age_group
     sex
     passengers
@@ -65,7 +65,7 @@ titanic_survival_by_age_gender.csv:
     age_group_passengers
     age_group_survived
     age_group_survival_rate
-'''
+```
 
 #### Data Visualization
 
