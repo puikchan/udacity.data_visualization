@@ -87,7 +87,7 @@ On the second chart, the legend probably can be moved away from the title, the r
 Based on the feedbacks, the following changes were made (titanic_v1.js),
 
 **Chart 1:**
-
+```
         svg3.append("text")
          .attr("x", chart._xPixels() + chart._widthPixels() / 2)
          .attr("y", chart._yPixels() - 20)
@@ -95,28 +95,28 @@ Based on the feedbacks, the following changes were made (titanic_v1.js),
          .style("font-weight", "bold")
          .text("Survival Rate by Age Group");
 
-**        x.titleShape.text("Age Group"); **
-**        y.titleShape.text("Survival Rate"); **
-
+        x.titleShape.text("Age Group"); 
+        y.titleShape.text("Survival Rate"); 
+```
 **Chart 2:**
 
 	// assigning colors: female-pink, male-light blue**
+```
+      chart.assignColor("female", "#FA8573", .75);
 
-**      chart.assignColor("female", "#FA8573", .75); **
-
-**chart.assignColor("male", "#7EC8FC", .75); **
+      chart.assignColor("male", "#7EC8FC", .75); 
 
       svg4.append("text")
          .attr("x", chart._xPixels() + chart._widthPixels() / 2)
          .attr("y", chart._yPixels() - 20)
          .style("text-anchor", "middle")
          .style("font-weight", "bold")
-**         .text("Survival Rate by Age Group and Gender"); **
+         .text("Survival Rate by Age Group and Gender"); 
 
-**    	chart.addLegend(width-120, 60, 100, 90, "left"); **
+    	chart.addLegend(width-120, 60, 100, 90, "left"); 
         x.titleShape.text("Age Group / Gender");
         y.titleShape.text("Survival Rate");
-
+```
 ![image alt text](image_2.png)
 
 ![image alt text](image_3.png)
@@ -128,7 +128,7 @@ Showing the survival rates is fine, it does show the female has a higher surviva
 ##### Final Data Visualization
 
 Based on the feedback#3, the following changes were made (titanic_final.js),
-
+```
 // create two y-axis
 // one for survival rate, one for passengers in group 
 //   (age_group and gender)
@@ -144,6 +144,7 @@ s2 = chart.addSeries(["passengers", "sex"], dimple.plot.bubble, [x, y2]);
 x.titleShape.text("Age Group / Gender");
 y1.titleShape.text("Survival Rate (shown in bars)");
 y2.titleShape.text("Number of Passengers in Group (shown as circles)");
+```
 
 **Final charts**
 1. Titanic Passenger Survival Rate by Age Group
