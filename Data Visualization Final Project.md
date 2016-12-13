@@ -100,8 +100,8 @@ Based on the feedbacks, the following changes were made (titanic_v1.js),
 ```
 **Chart 2:**
 
-	// assigning colors: female-pink, male-light blue**
 ```
+    // assigning colors: female-pink, male-light blue**
       chart.assignColor("female", "#FA8573", .75);
       chart.assignColor("male", "#7EC8FC", .75); 
 
@@ -176,7 +176,7 @@ Chart 2: Titanic Passenger Survival Rate by Age Group and Gender
 File description: (ref: [https://www.kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data) )
 
 VARIABLE DESCRIPTIONS:
-
+```
 survival        Survival			(0 = No; 1 = Yes)
 pclass          Passenger Class	(1 = 1st; 2 = 2nd; 3 = 3rd)
 name            Name
@@ -188,12 +188,12 @@ ticket          Ticket Number
 fare            Passenger Fare
 cabin           Cabin
 embarked        Port of Embarkation (C=Cherbourg; Q=Queenstown; S=Southampton)
-
+```
 SPECIAL NOTES:
-
+```
 Pclass is a proxy for socio-economic status (SES)
  1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower
-
+```
 Age is in Years; Fractional if Age less than One (1)
  If the Age is Estimated, it is in the form xx.5
 
@@ -259,7 +259,7 @@ select age_group, sex, survived, passengers,
  order by age_group, sex ;
 ```
 
-##### Titanic_survival_rate.csv:
+##### titanic_survival_rate.csv:
 ```
 select age_group, passengers,
        round((male_survived+female_survived)/passengers,3) survival_rate,
