@@ -25,10 +25,10 @@ This data visualization provides two charts to present the survival rates of the
 In both chart, the survival rate data points are represented by the bars, and the passenger counts data points are represented by the circles, respectively.
 
 For the purpose of data visualization in this project, only the following fields from the original dataset were used,
-  PassengerId
-  Survived
-  Sex
-  Age
+    PassengerId
+    Survived
+    Sex
+    Age
 
 #### Data Source
 
@@ -37,10 +37,10 @@ Udacity Data Visualization "Data Set Options" - [Titanic Data](https://docs.goog
 This data set contains demographics and passenger information from a subset (891) of the 2224 passengers and crew on board the Titanic. More information about the data set[ can be found here](https://www.kaggle.com/c/titanic-gettingStarted). The data set is included in the project submission in folder ./data, and the description is provided in appendix A.
 
 For the purpose of data visualization in this project, only the following fields were used,
-  PassengerId
-  Survived
-  Sex
-  Age
+    PassengerId
+    Survived
+    Sex
+    Age
 
 Further details of the data extraction will be discussed in the data file preparation section.
 
@@ -54,14 +54,14 @@ titanic_survival_rate.csv:
 
 titanic_survival_by_age_gender.csv:
 
-age_group,
-sex,
-passengers
-survived
-survival_rate
-age_group_passengers
-age_group_survived
-age_group_survival_rate
+    age_group,
+    sex
+    passengers
+    survived
+    survival_rate
+    age_group_passengers
+    age_group_survived
+    age_group_survival_rate
 
 #### Data Visualization
 
