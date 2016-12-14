@@ -5,7 +5,7 @@ Project is submitted in a zip file containing a root folder final_submission
 
 ( please note that there can be issue displaying the charts in Firefox, please use Google Chrome )
 
-code source is put under subfolder titanic
+Code source is put under subfolder titanic
 
 This document, documentation file "README.md" is put under root folder final_submission.
 
@@ -14,12 +14,12 @@ The six images files image(0-5).png support the image display in README.md.
 There is also a project pdf file included.
 
 Code source subfolder titanic:
-
+```
 index.html, titanic_final.js - final Titanic data visualization starting html/js page
 titanic_v1.html, titanic_v1.js - initial version to this project.
 titanic_v2.html, titanic_v2.js - second version following initial version.
-
-supporting files in sub-directories:
+```
+Supporting files in sub-directories:
 ```
   . css
   . js
@@ -30,6 +30,12 @@ supporting files in sub-directories:
 A sql subfolder also created to store the SQL statments that generate the csv files.
 
 Notes:
+For best visualization, html pages are best run from a local web server.
+
+However, a gist link a provided, the two charts displayed with the title cutoff and x-axis cutoff as well.
+
+( gist link http://bl.ocks.org/puikchan/9dd9d124b33df1d6dd35bd71f3bac844 )
+
 Code was tested using python 2.7.11
 
 To start, start web server from folder titanic: python -m SimpleHTTPServer 8000
@@ -44,41 +50,34 @@ localhost:8000/titanic_v1.html
 
 
 
+
 ## Udacity Data Visualization Final Project
 
-### (please test review with Chrome, for some reason Firefox do not display the full chart, or the title and legend can be misaligned)
+### (please review with Chrome, for some reason Firefox do not display the full chart, or the title and legend can be misaligned)
 
 ### Titanic Passenger Survival Rate Data Visualization
 
 #### Summary
 
-It is general understanding that in the Titanic accident, the female passengers, children and elderly were receiving priority to get on board of the lifeboats and thus should have a better survival chances. The charts in this project is try to put data into visual display of these understandings.
+It is general understanding that in the Titanic accident, the female passengers, children and elderly were receiving priority to get on board of the lifeboats and thus should have a better survival chances. The charts in this project attempts to put data into visual display of these understandings.
 
 #### Design
 
-This data visualization provides two charts to present the survival rates of the passengers on different age groups and gender of Titanic incident. 
+This data visualization provides two charts to present the survival rates of the passengers on different age groups and gender of the Titanic accident. 
+```
+ 1. Titanic Passenger Survival Rate by Age Group
+      x-axis: age groups 
+	  left y-axis: survival rate of age group (irrespective of gender)
+	  right y-axis: passenger counts in age group (irrespective of gender)
 
- 1. **Titanic Passenger Survival Rate by Age Group**
-```
-    x-axis: age groups 
-	left y-axis: survival rate of age group (irrespective of gender)
-	right y-axis: passenger counts in age group (irrespective of gender)
-```
- 2. **Titanic Passenger Survival Rate by Age Group and Gender**
-```
-    x-axis: age groups and gender
-	left y-axis: survival rate of age group
-	right y-axis: passenger counts in age group
+ 2. Titanic Passenger Survival Rate by Age Group and Gender
+      x-axis: age groups and gender
+	  left y-axis: survival rate of age group
+	  right y-axis: passenger counts in age group
 ```
 In both chart, the survival rate data points are represented by the bars (dimple.plot.bar), and the passenger counts data points are represented by the circles (dimple.plot.bubble), respectively.
 
-For the purpose of data visualization in this project, only the following fields from the original dataset were used,
-```    
-    PassengerId
-    Survived
-    Sex
-    Age
-```
+
 #### Data Source
 
 Udacity Data Visualization "Data Set Options" - [Titanic Data](https://docs.google.com/document/d/1w7KhqotVi5eoKE3I_AZHbsxdr-NmcWsLTIiZrpxWx4w/pub?embedded=true)
@@ -93,7 +92,7 @@ For the purpose of data visualization in this project, only the following fields
     Age
 ```
 
-Further details of the data extraction will be discussed in the data file preparation section.
+Further details of the data extraction will be discussed in the data file preparation section following.
 
 #### Data File Preparation
 
@@ -127,11 +126,11 @@ Data visualization was implemented with dimple. Feedbacks were obtained from co-
 
 Feedback#1
 
-The title on the first charts does not need to say "Total", and the axis description may be better not using the column names with underscores, it probably is better be a natural language. I do like that the actual rate is shown when the cursor is placed on the bars and a line is projected to the axes.
+The title on the first chart does not need to say "Total", and the axis description may be better not using the column names with underscores, it probably is better be natural words. I do like that the actual survival rate is shown when the cursor is placed on the bars and a line is projected to the axes.
 
 Feedback#2
 
-On the second chart, the legend probably can be moved away from the title, the right top corner or left top corner may be a good place. Also the colors of the bars is better be reversed, with the female in pink and male in blue, that would be more intuitive for viewers to tell which one is male and which one is female even without looking at the legend, since pink is more a feminine color in general.
+On the second chart, the legend probably can be moved away from the title, the right top corner or left top corner may be a good place, or even on the right side of the chart. Also the colors of the bars is better be reversed, with the female in pink and male in blue, that would be more intuitive for viewers to tell which one is male and which one is female even without looking at the legend, since pink is more a feminine color in general.
 
 ##### 2nd Data Visualization
 
@@ -173,11 +172,14 @@ Based on the feedbacks, the following changes were made (titanic_v1.js),
 
 Feedback#3
 
-Showing the survival rates is fine, it does show the female has a higher survival rate than the male in general, but i like to see how many passengers were there. Statistically speaking, if some age groups or gender group has only a few passengers, then the rate may not mean much.
+Showing the survival rates is fine, it does show the female has a higher survival rate than the male in general, but i like to see how many passengers were there. Let's say if there were a lot of men then women, that would mean a lot more people perished than the charts showed. The current chart shows that women hs pretty hight survival rate, but that survival rate would not mean a thing if there were only a few women passengers.
+
 
 ##### Final Data Visualization
 
-Based on the feedback#3, the following changes were made (titanic_final.js),
+Based on the feedback#3, the following changes were made to display the number of passengers (titanic_final.js).
+
+A second y-axis with identifying circles to indicate the number of passengers in the age groups and dimple.plot.bubble (circles in the charts),
 ```
 // create two y-axis
 // one for survival rate, one for passengers in group 
@@ -212,15 +214,15 @@ Based on the final charts (ignoring the age group "No Data" that the group with 
 
 Chart 1: Titanic Passenger Survival Rate by Age Group
 
-1. The overall survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60) except for the 
-2. The youngest age_group (0-10) had the highest survival rate of nearly 0.6.
-3. The age groups above 61 actually showed a significant drop in survival rate. However, there were only 22 passengers with age above 60. It is hard to make such conclusion with low number of passenger counts.
+1. The overall (male+female) survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60). 
+2. The youngest age_group (0-10) had the highest survival rate of nearly 0.6, this is in agreement with the general conception that very young children would have higher survival rate.
+3. The age groups above 61 actually showed a significant drop in survival rate, in contrast to general conception. However, there were only 22 passengers with age above 60. It is hard to make a general statement with low number of passenger counts.
 
 Chart 2: Titanic Passenger Survival Rate by Age Group and Gender
 
 1. It is easy to note that the female has a much higher survival rate in any age group.
 2. The age group (0-10) shows that the male and female survival rate was about even.
-3. The female age groups above 61 actually showed a significant rise in survival rate. However, with the same argument, there were only 17 female passengers with age above 60. It is hard to make such conclusion with low number of passenger counts.
+3. The female age groups above 61 actually showed a significant rise in survival rate. However, with the same argument as in chart 1, there were only 17 female passengers with age above 60. It is hard to make general statements with low number of passenger counts. One can even argue that only aged female were given the priority of getting on board the lifeboat, but not aged male, since the survival rate dropped for aged male, but rose for the aged female.
 
 #### Appendix A: Description of Titanic Dataset
 
