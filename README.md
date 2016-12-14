@@ -11,8 +11,6 @@ This document, documentation file "README.md" is put under root folder final_sub
 
 The six images files image(0-5).png support the image display in README.md.
 
-There is also a project pdf file included.
-
 Code source subfolder titanic:
 ```
 index.html, titanic_final.js - final Titanic data visualization starting html/js page
