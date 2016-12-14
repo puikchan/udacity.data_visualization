@@ -1,4 +1,4 @@
-# udacity.data_visualization
+# udacity.data_visualization 
 ## Project Submission Contents and Code run instructions
 
 Project is submitted in a zip file containing a root folder final_submission
@@ -26,6 +26,7 @@ Supporting files in sub-directories:
   . data
   . sql
 ```
+
 
 A sql subfolder also created to store the SQL statments that generate the csv files.
 
@@ -207,6 +208,8 @@ x.titleShape.text("Age Group / Gender");
 y1.titleShape.text("Survival Rate (shown in bars)");
 y2.titleShape.text("Number of Passengers in Group (shown as circles)");
 ```
+In addition, the two charts were changed to display survival rate in percentage, with 0-100% range. This range scale change was made so we can visually comparing the rates on the two charts.
+
 
 **Final charts Data Visualization Observations**
 ( note that the followings are just visual observations, not a strict statistical analysis )
