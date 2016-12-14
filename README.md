@@ -57,9 +57,15 @@ localhost:8000/titanic_v1.html
 
 ### Titanic Passenger Survival Rate Data Visualization
 
-#### Summary
+#### Summary 
 
 It is general understanding that in the Titanic accident, the female passengers, children and elderly were receiving priority to get on board of the lifeboats and thus should have a better survival chances. The charts in this project attempts to put data into visual display of these understandings.
+
+#### Data Visualization Findings Summary
+1. Female and very yound children were clearly had significant higher survival rate.
+2. Survival rates for Age groups from age 11 to 60 were about even, either in female or male group.
+3. Survival rates for age groups for ages over 60 dropped significantly for elderly male. Elderly female however did have very good survival rate, though the female passeenge count is only 3.
+
 
 #### Design
 
@@ -73,8 +79,12 @@ This data visualization provides two charts to present the survival rates of the
  2. Titanic Passenger Survival Rate by Age Group and Gender
       x-axis: age groups and gender
 	  left y-axis: survival rate of age group
-	  right y-axis: passenger counts in age group
+	  right y-axis: passenger counts in Gender/Age group
 ```
+The 1st chart "Titanic Passenger Survival Rate by Age Group" attempts to show the passenger survival rate in relationship to the age group if its in agreement with the public understanding that the young and elderly were given care to survive better. The findings from the data visualization is explained in the last section "Data Visualization Observations".
+
+The 2nd chart "Titanic Passenger Survival Rate by Gender/Age Group" attempts to show the passendger survival rate in relationship to the gender (in additional to age group) if it's in agreement with general understanding that women were given priority to have access to lifeboat. The findings from the data visualization is also explained in the last section "Data Visualization Observations".
+
 In both chart, the survival rate data points are represented by the bars (dimple.plot.bar), and the passenger counts data points are represented by the circles (dimple.plot.bubble), respectively.
 
 
@@ -198,31 +208,25 @@ y1.titleShape.text("Survival Rate (shown in bars)");
 y2.titleShape.text("Number of Passengers in Group (shown as circles)");
 ```
 
-**Final charts**
-
-1. Titanic Passenger Survival Rate by Age Group
-2. Titanic Passenger Survival Rate by Age Group and Gender
-
-![image alt text](image_4.png)
-
-![image alt text](image_5.png)
-
-Data Visualization Observations:
+**Final charts Data Visualization Observations**
 ( note that the followings are just visual observations, not a strict statistical analysis )
 
 Based on the final charts (ignoring the age group "No Data" that the group with no age information provided): 
 
 Chart 1: Titanic Passenger Survival Rate by Age Group
+![image alt text](image_4.png)
 
-1. The overall (male+female) survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60). 
-2. The youngest age_group (0-10) had the highest survival rate of nearly 0.6, this is in agreement with the general conception that very young children would have higher survival rate.
-3. The age groups above 61 actually showed a significant drop in survival rate, in contrast to general conception. However, there were only 22 passengers with age above 60. It is hard to make a general statement with low number of passenger counts.
+1. The overall survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60) except for the 
+2. The youngest age_group (0-10) had the highest survival rate of nearly 0.6.
+3. The age groups above 61 actually showed a significant drop in survival rate. However, there were only 22 passengers(19 male, 3 female) with age above 60. It is hard to make such conclusion with low number of passenger counts.
 
-Chart 2: Titanic Passenger Survival Rate by Age Group and Gender
+Chart 2. Titanic Passenger Survival Rate by Gender/Age Group
+![image alt text](image_5.png)
 
 1. It is easy to note that the female has a much higher survival rate in any age group.
 2. The age group (0-10) shows that the male and female survival rate was about even.
-3. The female age groups above 61 actually showed a significant rise in survival rate. However, with the same argument as in chart 1, there were only 17 female passengers with age above 60. It is hard to make general statements with low number of passenger counts. One can even argue that only aged female were given the priority of getting on board the lifeboat, but not aged male, since the survival rate dropped for aged male, but rose for the aged female.
+3. The female age groups above 60 actually showed a significant rise in survival rate. However, with the same argument, there were only 3 female passengers with age above 60. It is hard to make such conclusion with low number of passenger counts.
+
 
 #### Appendix A: Description of Titanic Dataset
 
