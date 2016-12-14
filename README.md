@@ -82,6 +82,8 @@ This data visualization provides two charts to present the survival rates of the
 	  left y-axis: survival rate of age group
 	  right y-axis: passenger counts in Gender/Age Group
 ```
+We need these two charts since as we will see the survival rates for female and that of male differed a lot, in addition to the overall rate by age group, the second chart by Gender and Age shall show the split/difference in survival rate between gender.
+
 The 1st chart "Titanic Passenger Survival Rate by Age Group" attempts to show the passenger survival rate in relationship to the age group if its in agreement with the public perception that the young and elderly were given care to survive better. The findings from the data visualization is explained in the last section "Data Visualization Observations".
 
 The 2nd chart "Titanic Passenger Survival Rate by Gender/Age Group" attempts to show the passendger survival rate in relationship to the gender (in additional to age group) if it's in agreement with general perception that women were given priority to have access to lifeboat. The findings from the data visualization is also explained in the last section "Data Visualization Observations".
