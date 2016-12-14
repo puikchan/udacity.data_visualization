@@ -130,9 +130,9 @@ Data visualization was implemented with dimple. Feedbacks were obtained from co-
 
 ##### Initial Data Visualization
 
-![image alt text](image_0.png)
+![image alt text](sr_v1.byAgeGroup.png)
 
-![image alt text](image_1.png)
+![image alt text](sr_v1.byGender.png)
 
 Feedback#1
 
@@ -176,9 +176,9 @@ Based on the feedbacks, the following changes were made (titanic_v1.js),
         x.titleShape.text("Age Group / Gender");
         y.titleShape.text("Survival Rate");
 ```
-![image alt text](image_2.png)
+![image alt text](sr_v2.byAgeGroup.png)
 
-![image alt text](image_3.png)
+![image alt text](sr_v2.byGender.png)
 
 Feedback#3
 
@@ -214,14 +214,14 @@ y2.titleShape.text("Number of Passengers in Group (shown as circles)");
 Based on the final charts (ignoring the age group "No Data" that the group with no age information provided): 
 
 Chart 1: Titanic Passenger Survival Rate by Age Group
-![image alt text](image_4.png)
+![image alt text](sr_final.byAgeGroup.png)
 
 1. The overall survival rate (around 0.4, or 40%) was quite even among different age groups (age 11 - 60) except for the 
 2. The youngest age_group (0-10) had the highest survival rate of nearly 0.6.
 3. The age groups above 61 actually showed a significant drop in survival rate. However, there were only 22 passengers(19 male, 3 female) with age above 60. It is hard to make such conclusion with low number of passenger counts.
 
 Chart 2. Titanic Passenger Survival Rate by Gender/Age Group
-![image alt text](image_5.png)
+![image alt text](sr_final.byGender.png)
 
 1. It is easy to note that the female has a much higher survival rate in any age group.
 2. The age group (0-10) shows that the male and female survival rate was about even.
