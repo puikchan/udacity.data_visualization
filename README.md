@@ -63,7 +63,7 @@ It is general understanding that in the Titanic accident, the female passengers,
 
 #### Data Visualization Findings Summary
 1. Female and very yound children were clearly had significant higher survival rate.
-2. Survival rates for Age groups from age 11 to 60 were about even, either in female or male group.
+2. Survival rates for Age groups from age 11 to 60 were about even, in either gender group.
 3. Survival rates for age groups for ages over 60 dropped significantly for elderly male. Elderly female however did have very good survival rate, though the female passeenge count is only 3.
 
 
